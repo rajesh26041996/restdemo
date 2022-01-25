@@ -5,8 +5,8 @@ package ai.qa.demo;
 //import io.restassured.response.ValidatableResponse;
 //import org.apache.commons.io.IOUtils;
 //import io.restassured.RestAssured;
-import io.restassured.response.Response;
-import static io.restassured.RestAssured.*;
+//import io.restassured.response.Response;
+//import static io.restassured.RestAssured.*;
 public class Upload {
     public static void main(String[] args)  {
 
