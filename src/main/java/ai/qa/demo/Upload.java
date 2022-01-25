@@ -11,6 +11,7 @@ public class Upload {
     public static void main(String[] args)  {
 
         System.out.println(System.getProperty("Env"));
+        System.out.println(System.getProperty("readId"));
         System.out.println("Test");
         RestAssured.baseURI="http://0.0.0.0:1144";
         //upload file
