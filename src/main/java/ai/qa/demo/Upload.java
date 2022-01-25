@@ -72,7 +72,7 @@ public class Upload {
         //delete
         String deleteId=System.getProperty("deleteId");
         String delete=given().header("Content-Type","application/json").body("{\n" +
-                "    \"id\":\"7\"\n" +
+                "    \"id\":\""+deleteId+"\"\n" +
                 "   \n" +
                 "}").when().delete("delete").then().extract().response().asString();
         System.out.println("delete: "+delete);
