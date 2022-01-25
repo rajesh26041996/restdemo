@@ -12,7 +12,7 @@ public class Upload {
 
         System.out.println(System.getProperty("Env"));
         System.out.println("Test");
-//        RestAssured.baseURI="http://0.0.0.0:1144";
+        RestAssured.baseURI="http://0.0.0.0:1144";
         //upload file
 //        String filepath="D:/166c8a8e-e27a-4a46-92c1-7ffd547c6a6c_document-1_split-2.pdf";
 //        Response result=given().multiPart(new File(filepath)).header("Content-Type","multipart/form-data").when().post("uploadfile").then().log().all().extract().response();
