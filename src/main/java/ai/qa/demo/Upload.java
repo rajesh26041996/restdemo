@@ -1,15 +1,17 @@
 package ai.qa.demo;
-import java.io.*;
-
-import io.restassured.filter.session.SessionFilter;
-import io.restassured.response.ValidatableResponse;
-import org.apache.commons.io.IOUtils;
-import io.restassured.RestAssured;
+//import java.io.*;
+//
+//import io.restassured.filter.session.SessionFilter;
+//import io.restassured.response.ValidatableResponse;
+//import org.apache.commons.io.IOUtils;
+//import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import static io.restassured.RestAssured.*;
 public class Upload {
-    public static void main(String[] args) throws IOException {
-        RestAssured.baseURI="http://0.0.0.0:1144";
+    public static void main(String[] args)  {
+
+        System.out.println(System.getProperty("Env"));
+//        RestAssured.baseURI="http://0.0.0.0:1144";
         //upload file
 //        String filepath="D:/166c8a8e-e27a-4a46-92c1-7ffd547c6a6c_document-1_split-2.pdf";
 //        Response result=given().multiPart(new File(filepath)).header("Content-Type","multipart/form-data").when().post("uploadfile").then().log().all().extract().response();
@@ -32,40 +34,40 @@ public class Upload {
 //            e.printStackTrace();
 //        }
 
-        //read_data
-        String read=given().header("Content-Type","application/json").queryParam("id","1").when().get("read").then().extract().response().asString();
-        System.out.println(read);
-
-        //readall
-        String  readall=given().header("Content-Type","application/json").when().get("readall").then().extract().response().asString();
-        System.out.println(readall);
-
-        //write_data
-        String write=given().header("Content-Type","application/json").body("{\n" +
-                "    \"id\":\"5\",\n" +
-                "    \"name\":\"rajeshKumar\"\n" +
-                "}").when().post("write").then().extract().response().asString();
-        System.out.println(write);
-
-
-        //update
-        String update=given().header("Content-Type","application/json").body("{\n" +
-                "    \"id\":\"5\",\n" +
-                "    \"name\":\"raj\"\n" +
-                "}").when().put("update").then().extract().response().asString();
-        System.out.println(update);
-
-
-
-        //delete
-        ValidatableResponse delete=given().header("Content-Type","application/json").body("{\n" +
-                "    \"id\":\"7\"\n" +
-                "   \n" +
-                "}").when().delete("delete").then().assertThat().statusCode(200).header("server","Werkzeug/2.0.1 Python/3.8.3");
-        System.out.println(delete);
-
-
-
+//        //read_data
+//        String read=given().header("Content-Type","application/json").queryParam("id","1").when().get("read").then().extract().response().asString();
+//        System.out.println(read);
+//
+//        //readall
+//        String  readall=given().header("Content-Type","application/json").when().get("readall").then().extract().response().asString();
+//        System.out.println(readall);
+//
+//        //write_data
+//        String write=given().header("Content-Type","application/json").body("{\n" +
+//                "    \"id\":\"5\",\n" +
+//                "    \"name\":\"rajeshKumar\"\n" +
+//                "}").when().post("write").then().extract().response().asString();
+//        System.out.println(write);
+//
+//
+//        //update
+//        String update=given().header("Content-Type","application/json").body("{\n" +
+//                "    \"id\":\"5\",\n" +
+//                "    \"name\":\"raj\"\n" +
+//                "}").when().put("update").then().extract().response().asString();
+//        System.out.println(update);
+//
+//
+//
+//        //delete
+//        ValidatableResponse delete=given().header("Content-Type","application/json").body("{\n" +
+//                "    \"id\":\"7\"\n" +
+//                "   \n" +
+//                "}").when().delete("delete").then().assertThat().statusCode(200).header("server","Werkzeug/2.0.1 Python/3.8.3");
+//        System.out.println(delete);
+//
+//
+//
 
 
         //cookie
