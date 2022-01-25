@@ -71,7 +71,7 @@ public class Upload {
         ValidatableResponse delete=given().header("Content-Type","application/json").body("{\n" +
                 "    \"id\":\"7\"\n" +
                 "   \n" +
-                "}").when().delete("delete").then().assertThat().statusCode(200).header("server","Werkzeug/2.0.1 Python/3.8.3");
+                "}").when().delete("delete").then().assertThat().statusCode(200);
         System.out.println(delete);
 
 
