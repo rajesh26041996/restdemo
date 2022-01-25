@@ -1,12 +1,12 @@
 package ai.qa.demo;
-//import java.io.*;
-//
-//import io.restassured.filter.session.SessionFilter;
-//import io.restassured.response.ValidatableResponse;
-//import org.apache.commons.io.IOUtils;
-//import io.restassured.RestAssured;
-//import io.restassured.response.Response;
-//import static io.restassured.RestAssured.*;
+import java.io.*;
+
+import io.restassured.filter.session.SessionFilter;
+import io.restassured.response.ValidatableResponse;
+import org.apache.commons.io.IOUtils;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import static io.restassured.RestAssured.*;
 public class Upload {
     public static void main(String[] args)  {
 
@@ -35,40 +35,44 @@ public class Upload {
 //            e.printStackTrace();
 //        }
 
-//        //read_data
-//        String read=given().header("Content-Type","application/json").queryParam("id","1").when().get("read").then().extract().response().asString();
-//        System.out.println(read);
-//
-//        //readall
-//        String  readall=given().header("Content-Type","application/json").when().get("readall").then().extract().response().asString();
-//        System.out.println(readall);
-//
-//        //write_data
-//        String write=given().header("Content-Type","application/json").body("{\n" +
-//                "    \"id\":\"5\",\n" +
-//                "    \"name\":\"rajeshKumar\"\n" +
-//                "}").when().post("write").then().extract().response().asString();
-//        System.out.println(write);
-//
-//
-//        //update
-//        String update=given().header("Content-Type","application/json").body("{\n" +
-//                "    \"id\":\"5\",\n" +
-//                "    \"name\":\"raj\"\n" +
-//                "}").when().put("update").then().extract().response().asString();
-//        System.out.println(update);
-//
-//
-//
-//        //delete
-//        ValidatableResponse delete=given().header("Content-Type","application/json").body("{\n" +
-//                "    \"id\":\"7\"\n" +
-//                "   \n" +
-//                "}").when().delete("delete").then().assertThat().statusCode(200).header("server","Werkzeug/2.0.1 Python/3.8.3");
-//        System.out.println(delete);
-//
-//
-//
+        String readId=System.getProperty("readId");
+
+        //read_data
+        String read=given().header("Content-Type","application/json").queryParam("id",readId).when().get("read").then().extract().response().asString();
+        System.out.println(read);
+
+        //readall
+        String  readall=given().header("Content-Type","application/json").when().get("readall").then().extract().response().asString();
+        System.out.println(readall);
+
+        //write_data
+        String writeId=System.getProperty("writeId");
+        String writeName=System.getProperty("writeName");
+        String write=given().header("Content-Type","application/json").body("{\n" +
+                "    \"id\":\""+writeId+"\",\n" +
+                "    \"name\":\""+writeName+"\"\n" +
+                "}").when().post("write").then().extract().response().asString();
+        System.out.println(write);
+
+
+        //update
+        String update=given().header("Content-Type","application/json").body("{\n" +
+                "    \"id\":\"5\",\n" +
+                "    \"name\":\"raj\"\n" +
+                "}").when().put("update").then().extract().response().asString();
+        System.out.println(update);
+
+
+
+        //delete
+        ValidatableResponse delete=given().header("Content-Type","application/json").body("{\n" +
+                "    \"id\":\"7\"\n" +
+                "   \n" +
+                "}").when().delete("delete").then().assertThat().statusCode(200).header("server","Werkzeug/2.0.1 Python/3.8.3");
+        System.out.println(delete);
+
+
+
 
 
         //cookie
