@@ -50,8 +50,7 @@ public class Upload {
         //write_data
         String writeId=System.getProperty("writeId");
         String writeName=System.getProperty("writeName");
-        System.out.println(writeId);
-        System.out.println(writeId);
+
         String write=given().header("Content-Type","application/json").body("{\n" +
                 "    \"id\":\""+writeId+"\",\n" +
                 "    \"name\":\""+writeName+"\"\n" +
