@@ -10,9 +10,7 @@ import static io.restassured.RestAssured.*;
 public class Upload {
     public static void main(String[] args)  {
 
-        System.out.println("HI all1");
-        System.out.println(System.getProperty("readId"));
-        System.out.println(System.getProperty("Env"));
+
         System.out.println("Test");
         RestAssured.baseURI="http://0.0.0.0:1144";
         //upload file
