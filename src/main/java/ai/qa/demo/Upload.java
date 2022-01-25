@@ -36,6 +36,7 @@ public class Upload {
 //        }
 
         String readId=System.getProperty("readId");
+        System.out.println(readId);
 
         //read_data
         String read=given().header("Content-Type","application/json").queryParam("id",readId).when().get("read").then().extract().response().asString();
@@ -48,6 +49,8 @@ public class Upload {
         //write_data
         String writeId=System.getProperty("writeId");
         String writeName=System.getProperty("writeName");
+        System.out.println(writeId);
+        System.out.println(writeId);
         String write=given().header("Content-Type","application/json").body("{\n" +
                 "    \"id\":\""+writeId+"\",\n" +
                 "    \"name\":\""+writeName+"\"\n" +
