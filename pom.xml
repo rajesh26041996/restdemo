@@ -11,9 +11,10 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <exec.mainClass>com.waisbrot.MainClass</exec.mainClass>
 
     </properties>
-    <properties><exec.mainClass>com.waisbrot.MainClass</exec.mainClass></properties>
+
     <dependencies>
 
         <dependency>
